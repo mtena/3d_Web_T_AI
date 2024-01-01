@@ -1,9 +1,25 @@
 import React from 'react'
+import { Canvas } from '@react-three/fiber'
 
-const Canvas = () => {
+import { Environment,Center } from '@react-three/drei'
+
+import Shirt from './Shirt'
+import Backdrop from './Backdrop'
+import CameraRig from './CameraRig'
+import { AmbientLight } from 'three'
+const CanvasModel = () => {
   return (
-    <div>Canvas</div>
+    <Canvas>
+      <ambientLight intensity={.5} />
+     <CameraRig>
+      {/* <Backdrop>*/}
+        <Center>
+          <Shirt/>
+        </Center>
+      {/*</Backdrop>*/}
+      </CameraRig>
+    </Canvas>
   )
 }
 
-export default Canvas
+export default CanvasModel
